@@ -1,6 +1,6 @@
 {
   "name": "@brainervirus.dev/e-commerce",
-  "version": "0.1.0",
+  "version": "0.0.0-development",
   "private": false,
   "scripts": {
     "dev": "next dev",
@@ -8,17 +8,18 @@
     "start": "next start",
     "lint": "next lint",
     "commit": "git-cz",
-    "upgrade": "npm-upgrade"
+    "upgrade": "npm-upgrade",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.14",
-    "@types/node": "18.16.3",
-    "@types/react": "18.2.5",
-    "@types/react-dom": "18.2.3",
+    "@types/node": "20.1.0",
+    "@types/react": "18.2.6",
+    "@types/react-dom": "18.2.4",
     "autoprefixer": "10.4.14",
-    "eslint": "8.39.0",
-    "eslint-config-next": "13.4.0",
-    "next": "13.4.0",
+    "eslint": "8.40.0",
+    "eslint-config-next": "13.4.1",
+    "next": "13.4.1",
     "postcss": "8.4.23",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -29,6 +30,40 @@
     "cz-conventional-changelog": "^3.3.0",
     "npm-upgrade": "^3.1.0",
     "prettier": "^2.8.8",
-    "prettier-plugin-tailwindcss": "^0.2.8"
+    "prettier-plugin-tailwindcss": "^0.2.8",
+    "semantic-release": "^21.0.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "release": {
+    "branches": [
+      "main",
+      "+([0-9])?(.{+([0-9]),x}).x",
+      {
+        "name": "test-*",
+        "prerelease": true
+      }
+    ]
+  },
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/npm",
+      {
+        "publish": "no"
+      }
+    ],
+    "@semantic-release/git"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BrainerVirus/e-commerce.git"
   }
 }
