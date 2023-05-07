@@ -51,12 +51,6 @@
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
-    [
-      "@semantic-release/npm",
-      {
-        "publish": "no"
-      }
-    ],
     "@semantic-release/git"
   ],
   "publishConfig": {
