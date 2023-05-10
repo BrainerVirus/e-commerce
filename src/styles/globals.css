@@ -16,6 +16,21 @@
   font-style: normal;
 }
 
+@layer {
+  .nav-item {
+    @apply relative cursor-pointer after:absolute after:left-0 after:top-6 after:h-1 after:w-0 after:bg-logoGreen after:content-[''];
+  }
+  /* .nav-item:hover::after {
+    @apply w-full transition-all duration-300 ease-in-out;
+  } */
+  .nav-item::after.active {
+    @apply w-full transition-all duration-300 ease-in-out;
+  }
+  .nav-item::after {
+    @apply w-0 transition-all duration-300 ease-in-out;
+  }
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -40,6 +55,7 @@ body {
   color: black;
   background: white;
   font-family: "roboto", sans-serif;
+  font-size: 16px;
   margin: 0 auto;
   max-width: 90vw;
   max-width: 90svw;
