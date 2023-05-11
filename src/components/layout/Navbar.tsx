@@ -2,9 +2,9 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Search, ShoppingBag, User, ChevronDown } from "react-feather";
-import Dropdown from "../ui/DropDown";
-import Options from "../types/Options";
-import ActiveIndex from "../types/Action";
+import Dropdown from "@/components/ui/DropDown";
+import Options from "@/types/Options";
+import ActiveIndex from "@/types/Action";
 
 function Navbar() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
