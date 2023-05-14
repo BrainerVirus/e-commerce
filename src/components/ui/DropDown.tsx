@@ -1,8 +1,8 @@
 "use client";
 
-import { Fragment, MouseEvent, useRef, useState } from "react";
+import { Fragment, useRef, useState } from "react";
 import { Menu, Transition } from "@headlessui/react";
-import Options from "../types/Options";
+import Options from "@/types/Options";
 
 interface Props {
   options: Options[];
@@ -27,7 +27,7 @@ function Dropdown({ options, children, setActiveIndex }: Props): JSX.Element {
       setIsOpen(false);
       setActiveIndex(null);
       closeTimeoutRef.current = null;
-    }, 200);
+    }, 100);
     closeTimeoutRef.current = timeoutId as unknown as number;
   };
 

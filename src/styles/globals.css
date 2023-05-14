@@ -16,48 +16,42 @@
   font-style: normal;
 }
 
-@layer {
+@layer base {
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+
+  body {
+    color: black;
+    background: white;
+    font-family: "roboto", sans-serif;
+    font-size: 16px;
+    color: theme("colors.fontLight");
+  }
+
+  main {
+    margin: 0 auto;
+    max-width: 80vw;
+    max-width: 80svw;
+  }
+}
+
+@layer components {
   .nav-item {
     @apply relative cursor-pointer after:absolute after:left-0 after:top-6 after:h-1 after:w-0 after:bg-logoGreen after:content-[''];
   }
+
   /* .nav-item:hover::after {
     @apply w-full transition-all duration-300 ease-in-out;
   } */
+
   .nav-item::after.active {
     @apply w-full transition-all duration-300 ease-in-out;
   }
+
   .nav-item::after {
     @apply w-0 transition-all duration-300 ease-in-out;
   }
-}
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
-body {
-  color: black;
-  background: white;
-  font-family: "roboto", sans-serif;
-  font-size: 16px;
-  margin: 0 auto;
-  max-width: 90vw;
-  max-width: 90svw;
-  color: theme("colors.fontLight");
 }

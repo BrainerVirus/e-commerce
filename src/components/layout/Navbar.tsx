@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Search, ShoppingBag, User, ChevronDown } from "react-feather";
+
 import Dropdown from "@/components/ui/DropDown";
 import Options from "@/types/Options";
 import ActiveIndex from "@/types/Action";
@@ -26,7 +27,7 @@ function Navbar() {
   };
 
   return (
-    <header className="flex items-center justify-between py-6">
+    <nav className="mx-auto my-0 flex max-w-[80vw] items-center justify-between py-6">
       <Image
         className="grow-0"
         src="/img/hero.svg"
@@ -71,7 +72,7 @@ function Navbar() {
       <div className="flex items-center gap-3">
         <form role="search" className="relative flex items-center">
           <input
-            className="max-w-[200px] rounded-[10px] border-[1px] bg-gray-100 py-[4px] pl-10"
+            className="max-w-[200px] rounded-[10px] border-[1px] border-secondaryLight bg-gray-100 py-[4px] pl-10"
             type="search"
             name="search-input"
             placeholder="Search..."
@@ -83,7 +84,7 @@ function Navbar() {
         <ShoppingBag className="cursor-pointer text-fontLight" />
         <User className="cursor-pointer text-fontLight" />
       </div>
-    </header>
+    </nav>
   );
 }
 

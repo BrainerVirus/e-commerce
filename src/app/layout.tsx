@@ -1,6 +1,6 @@
 import "@/styles/globals.css";
 
-import Navbar from "@/components/layout/Navbar";
+import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
 export const metadata = {
@@ -15,8 +15,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <Navbar />
+      <body className="relative scroll-smooth">
+        <Header />
         {children}
         <Footer />
       </body>
